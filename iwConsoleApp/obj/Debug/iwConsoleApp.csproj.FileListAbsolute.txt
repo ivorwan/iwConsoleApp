@@ -1,0 +1,6 @@
+\\psf\home\documents\visual studio 2013\Projects\iwConsoleApp\iwConsoleApp\bin\Debug\iwConsoleApp.exe.config
+\\psf\home\documents\visual studio 2013\Projects\iwConsoleApp\iwConsoleApp\bin\Debug\iwConsoleApp.exe
+\\psf\home\documents\visual studio 2013\Projects\iwConsoleApp\iwConsoleApp\bin\Debug\iwConsoleApp.pdb
+\\psf\home\documents\visual studio 2013\Projects\iwConsoleApp\iwConsoleApp\obj\Debug\iwConsoleApp.csprojResolveAssemblyReference.cache
+\\psf\home\documents\visual studio 2013\Projects\iwConsoleApp\iwConsoleApp\obj\Debug\iwConsoleApp.exe
+\\psf\home\documents\visual studio 2013\Projects\iwConsoleApp\iwConsoleApp\obj\Debug\iwConsoleApp.pdb

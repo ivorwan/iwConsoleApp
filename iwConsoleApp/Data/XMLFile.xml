@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+  <Domain id="domain1">
+    <Offer id="1">
+      <Url>http://url1.com</Url>
+    </Offer>
+    <Offer id="2">
+      <Url>http://url2.com</Url>
+    </Offer>
+  </Domain>
+  <Domain id="domain2">
+    <Offer id="3">
+      <Url>http://url3.com</Url>
+    </Offer>
+    <Offer id="4">
+      <Url>http://url4.com</Url>
+    </Offer>
+  </Domain>
+
+</Root>

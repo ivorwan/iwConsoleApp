@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace iwConsoleApp
 {
@@ -10,8 +13,9 @@ namespace iwConsoleApp
     {
         static void Main(string[] args)
         {
-            LINQExamples ex1 = new LINQExamples();
-            
+
+            Console.ReadKey();
+
         }
     }
 }

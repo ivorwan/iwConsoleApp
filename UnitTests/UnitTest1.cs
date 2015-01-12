@@ -28,6 +28,20 @@ namespace UnitTests
         }
 
         [TestMethod]
+        public void TestLINQExamplesDynamic()
+        {
+            LINQExamples ex = new LINQExamples();
+            List<dynamic> result = ex.CountCharsInStringDynamic("iwdwds");
+
+            var x = result[0].Key;
+            Assert.IsTrue(result.Count == 4);
+            Assert.IsTrue(result[0].Key == "i");
+
+        }
+
+
+
+        [TestMethod]
         public void TestXml()
         {
             var assembly = Assembly.GetExecutingAssembly();

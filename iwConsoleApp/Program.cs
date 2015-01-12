@@ -13,7 +13,11 @@ namespace iwConsoleApp
     {
         static void Main(string[] args)
         {
+            //string test = null;
 
+            LINQExamples ex = new LINQExamples();
+            List<dynamic> result = ex.CountCharsInStringDynamic("iwdwds");
+            Console.WriteLine(result[0].Key);
             Console.ReadKey();
 
         }

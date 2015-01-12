@@ -35,6 +35,7 @@ namespace iwConsoleApp
         /// <summary>
         /// Dynamic types are internal. To expose them, add the next line to assemblyinfo, specifying friendly assemblies
         /// [assembly: InternalsVisibleTo("UnitTests")]
+        /// note that dynamic classes should use for interop and not to try to save code lines.
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>

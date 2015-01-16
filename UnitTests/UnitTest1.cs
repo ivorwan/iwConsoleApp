@@ -22,8 +22,8 @@ namespace UnitTests
             LINQExamples ex = new LINQExamples();
             var result = ex.CountCharsInString("iwdwds");
 
-            Assert.IsTrue(result.Count == 4);
-            Assert.IsTrue(result[0].Key == "i");
+            Assert.AreEqual(result.Count, 4);
+            Assert.AreEqual(result[0].Key, "i");
             
         }
 
@@ -33,9 +33,8 @@ namespace UnitTests
             LINQExamples ex = new LINQExamples();
             List<dynamic> result = ex.CountCharsInStringDynamic("iwdwds");
 
-            var x = result[0].Key;
-            Assert.IsTrue(result.Count == 4);
-            Assert.IsTrue(result[0].Key == "i");
+            Assert.AreEqual(result.Count, 4);
+            Assert.AreEqual(result[0].Key,  "i");
 
         }
 
@@ -54,8 +53,8 @@ namespace UnitTests
                 offers = ex.ReadXml(stream, "domain2");
             }
 
-            Assert.IsTrue(offers[0].OfferId == 3);
-            Assert.IsTrue(offers[1].Url == "http://url4.com");
+            Assert.AreEqual(offers[0].OfferId, 3);
+            Assert.AreEqual(offers[1].Url, "http://url4.com");
             //offers[0].OfferId
         }
     }

@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\AShape.cs" />
+    <Compile Include="Abstract\Circle.cs" />
+    <Compile Include="Abstract\Square.cs" />
     <Compile Include="ArraysAndStrings.cs" />
     <Compile Include="LinkedList.cs" />
     <Compile Include="LINQExamples.cs" />

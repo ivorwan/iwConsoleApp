@@ -4,6 +4,7 @@ using iwConsoleApp;
 using System.Collections.Generic;
 using System.Reflection;
 using System.IO;
+using iwConsoleApp.DataStructures;
 
 namespace UnitTests
 {

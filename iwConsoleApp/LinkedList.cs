@@ -17,6 +17,7 @@ namespace iwConsoleApp
         public void AppendToLast(ListNode node)
         {
             var p = this;
+
             while (p.Next != null)
             {
                 p = p.Next;
@@ -94,7 +95,7 @@ namespace iwConsoleApp
         {
 
             if (n < 0)
-                throw new ArgumentException("must be >= 1");
+                throw new ArgumentException("must be >= 0");
 
             var p1 = list;
             ListNode p2 = null;
@@ -107,6 +108,52 @@ namespace iwConsoleApp
                 p1 = p1.Next;
             }
             return null ;
+        }
+        /// <summary>
+        /// You have two numbers represented by a linked list, 
+        /// where each node contains a sin- 
+        /// gle digit The digits are stored in reverse order, 
+        /// such that the 1’s digit is at the head of the list 
+        /// Write a function that adds the two numbers and returns the sum as a linked list
+        /// EXAMPLE
+        /// Input: (3 -> 1 -> 5), (5 -> 9 -> 2) Output: 8 -> 0 -> 8
+        /// </summary>
+        /// <param name="op1"></param>
+        /// <param name="op2"></param>
+        /// <returns></returns>
+        public ListNode AddOps(ListNode op1, ListNode op2)
+        {
+            var p1 = op1;
+            var p2 = op2;
+            int carry = 0;
+            ListNode result = null;
+            while (p1 != null || p2 != null)
+            {
+                int r1 = 0;
+                if (p1 != null)
+                    r1 = Convert.ToInt32(p1.Data);
+
+                int r2 = 0;
+                if (p2 != null)
+                    r2 = Convert.ToInt32(p2.Data);
+                int r = r1 + r2 + carry;
+                if (result == null)
+                    result = new ListNode((r % 10).ToString());
+                else
+                    result.AppendToLast((r % 10).ToString());
+                if (r >= 10)
+                    carry = r/10;
+                else
+                    carry = 0;
+                if (p1 != null)
+                    p1 = p1.Next;
+                if (p2 != null)
+                    p2 = p2.Next;
+            }
+            if (carry > 0)
+                result.AppendToLast(carry.ToString());
+
+            return result;
         }
     }
 }

@@ -13,9 +13,25 @@ namespace iwConsoleApp
     {
         static void Main(string[] args)
         {
+            bool p1 = false;
+            bool p2 = false;
 
-            
 
+            //(p1 != null || p2 != null && (!(p1 == null && p2 == null)))
+
+
+            Console.Write(((p1 | p2) & (!p1 & !p2)).ToString());
+            p1 = false;
+            p2 = true;
+            Console.Write(((p1 | p2) & (!p1 & !p2)).ToString());
+
+            p1 = true;
+            p2 = false;
+            Console.Write(((p1 | p2) & (!p1 & !p2)).ToString());
+
+            p1 = true;
+            p2 = true;
+            Console.Write(((p1 | p2) & (!p1 & !p2)).ToString());
             Console.ReadKey();
 
 

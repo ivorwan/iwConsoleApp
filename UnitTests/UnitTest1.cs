@@ -109,7 +109,35 @@ namespace UnitTests
             Assert.AreEqual(p.Data, "n7");
 
         }
+        [TestMethod]
+        public void TestAddOps()
+        {
+            ListNode op1 = new ListNode("3");
+            op1.AppendToLast("1");
+            op1.AppendToLast("5");
 
+            ListNode op2 = new ListNode("5");
+            op2.AppendToLast("9");
+            op2.AppendToLast("2");
+
+            LinkedList list = new LinkedList();
+
+
+            var result = list.AddOps(op1, op2);
+            Assert.AreEqual(result.ToString(), "8 -> 0 -> 8");
+
+            op1 = new ListNode("0");
+            op1.AppendToLast("5");
+            op1.AppendToLast("7");
+
+            op2 = new ListNode("4");
+            op2.AppendToLast("7");
+            op2.AppendToLast("4");
+            op2.AppendToLast("9");
+
+            result = list.AddOps(op1, op2);
+            Assert.AreEqual(result.ToString(), "4 -> 2 -> 2 -> 0 -> 1");
+        }
 
         [TestMethod]
         public void TestSkip()

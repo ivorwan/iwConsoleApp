@@ -47,6 +47,7 @@
     <Compile Include="ArraysAndStrings.cs" />
     <Compile Include="DataStructures\LinkedList.cs" />
     <Compile Include="DataStructures\Stack.cs" />
+    <Compile Include="Inheritance\BaseClass.cs" />
     <Compile Include="LINQExamples.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

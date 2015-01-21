@@ -4,6 +4,7 @@ using iwConsoleApp;
 using System.Collections.Generic;
 using System.Reflection;
 using System.IO;
+using iwConsoleApp.DataStructures;
 
 namespace UnitTests
 {
@@ -22,8 +23,8 @@ namespace UnitTests
             LINQExamples ex = new LINQExamples();
             var result = ex.CountCharsInString("iwdwds");
 
-            Assert.IsTrue(result.Count == 4);
-            Assert.IsTrue(result[0].Key == "i");
+            Assert.AreEqual(result.Count, 4);
+            Assert.AreEqual(result[0].Key, "i");
             
         }
 
@@ -33,9 +34,8 @@ namespace UnitTests
             LINQExamples ex = new LINQExamples();
             List<dynamic> result = ex.CountCharsInStringDynamic("iwdwds");
 
-            var x = result[0].Key;
-            Assert.IsTrue(result.Count == 4);
-            Assert.IsTrue(result[0].Key == "i");
+            Assert.AreEqual(result.Count, 4);
+            Assert.AreEqual(result[0].Key,  "i");
 
         }
 
@@ -54,8 +54,8 @@ namespace UnitTests
                 offers = ex.ReadXml(stream, "domain2");
             }
 
-            Assert.IsTrue(offers[0].OfferId == 3);
-            Assert.IsTrue(offers[1].Url == "http://url4.com");
+            Assert.AreEqual(offers[0].OfferId, 3);
+            Assert.AreEqual(offers[1].Url, "http://url4.com");
             //offers[0].OfferId
         }
 
@@ -84,7 +84,101 @@ namespace UnitTests
 
         }
 
+        [TestMethod]
+        public void TestFindNthToLast()
+        {
+            ListNode node = new ListNode("n1");
+            node.AppendToLast("n2");
+            node.AppendToLast("n3");
+            node.AppendToLast("n4");
+            node.AppendToLast("n5");
+            node.AppendToLast("n6");
+            node.AppendToLast("n7");
+            
+            LinkedList list = new LinkedList();
+            var p = list.FindNthToLast(node, 2);
+
+            Assert.AreEqual(p.Data, "n5");
+
+            p = list.FindNthToLast(node, 1);
+            Assert.AreEqual(p.Data, "n6");
+
+            p = list.FindNthToLast(node, 5);
+            Assert.AreEqual(p.Data, "n2");
+
+            p = list.FindNthToLast(node, 0);
+            Assert.AreEqual(p.Data, "n7");
+
+        }
+        [TestMethod]
+        public void TestAddOps()
+        {
+            ListNode op1 = new ListNode("3");
+            op1.AppendToLast("1");
+            op1.AppendToLast("5");
+
+            ListNode op2 = new ListNode("5");
+            op2.AppendToLast("9");
+            op2.AppendToLast("2");
+
+            LinkedList list = new LinkedList();
 
 
+            var result = list.AddOps(op1, op2);
+            Assert.AreEqual(result.ToString(), "8 -> 0 -> 8");
+
+            op1 = new ListNode("0");
+            op1.AppendToLast("5");
+            op1.AppendToLast("7");
+
+            op2 = new ListNode("4");
+            op2.AppendToLast("7");
+            op2.AppendToLast("4");
+            op2.AppendToLast("9");
+
+            result = list.AddOps(op1, op2);
+            Assert.AreEqual(result.ToString(), "4 -> 2 -> 2 -> 0 -> 1");
+        }
+
+        [TestMethod]
+        public void TestSkip()
+        {
+            ListNode node = new ListNode("n1");
+            node.AppendToLast("n2");
+            node.AppendToLast("n3");
+            node.AppendToLast("n4");
+            node.AppendToLast("n5");
+            node.AppendToLast("n6");
+            node.AppendToLast("n7");
+
+            var p = node.Skip(2);
+            Assert.AreEqual(p.Data, "n3");
+
+            p = p.Skip(3);
+            Assert.AreEqual(p.Data, "n6");
+            
+            p = p.Skip(5);
+            Assert.AreEqual(p.Data, "n7");
+
+        }
+
+        [TestMethod]
+        public void TestLinkedDupe()
+        {
+            ListNode node = new ListNode("n1");
+            node.AppendToLast("n2");
+            node.AppendToLast("n3");
+            node.AppendToLast("n2");
+            node.AppendToLast("n4");
+            node.AppendToLast("n1");
+            node.AppendToLast("n5");
+
+            Assert.AreEqual(node.ToString(), "n1 -> n2 -> n3 -> n2 -> n4 -> n1 -> n5");
+            Console.WriteLine();
+
+            LinkedList list = new LinkedList();
+            list.RemoveDuplicates(node);
+            Assert.AreEqual(node.ToString(), "n1 -> n2 -> n3 -> n4 -> n5");
+        }
     }
 }

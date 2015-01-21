@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace iwConsoleApp
+namespace iwConsoleApp.DataStructures
 {
 
     public class TreeNode

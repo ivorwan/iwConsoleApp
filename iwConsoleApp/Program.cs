@@ -1,4 +1,5 @@
 ﻿using iwConsoleApp.Inheritance;
+using iwConsoleApp.Math;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,6 +15,11 @@ namespace iwConsoleApp
     {
         static void Main(string[] args)
         {
+
+
+            string s = BinaryConverter.Convert(15);
+            Console.ReadKey();
+
 
             BaseClass bc = new DerivedClass();
             bc.Write1();

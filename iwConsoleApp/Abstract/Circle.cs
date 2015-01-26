@@ -11,7 +11,7 @@ namespace iwConsoleApp.Abstract
         public double Radius { get; set; }
         public override double Area()
         {
-            return (Math.PI * Radius * Radius);
+            return (3.14 * Radius * Radius);
            
         }
     }

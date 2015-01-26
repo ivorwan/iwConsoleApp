@@ -17,6 +17,8 @@ namespace iwConsoleApp.Inheritance
         {
             Console.WriteLine("Base Write2");
         }
+
+        
     }
 
     public class DerivedClass : BaseClass
@@ -30,5 +32,22 @@ namespace iwConsoleApp.Inheritance
         {
             Console.WriteLine("Derived Write2");
         }
+
+        public string Method1(string p1, int p2)
+        {
+            return "";
+        }
+
+        public string Method1(string p1, int p2, int p3)
+        {
+            return "";
+        }
+
+        public string Method1(int p2, string p1)
+        {
+            return "";
+        }
+       
+
     }
 }

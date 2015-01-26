@@ -28,6 +28,7 @@ namespace iwConsoleApp
                 }
             }
 
+
             // solution 2
             var result = str.GroupBy(c => c).Select(g => new {Key = g.Key, Count = g.Count()}).Where(k => k.Count > 1).ToList();
 

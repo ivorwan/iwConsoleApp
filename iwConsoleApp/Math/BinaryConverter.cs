@@ -12,12 +12,16 @@ namespace iwConsoleApp.Math
         {
             string binaryResult = "";
             int quotient = num / 2;
-            while (quotient > 0)
-            {
+
+            if (quotient == 0)
                 binaryResult += num % 2;
-                quotient = num / 2;
-                num = quotient;
-            }
+            else
+                while (quotient > 0)
+                {
+                    binaryResult += num % 2;
+                    quotient = num / 2;
+                    num = quotient;
+                }
 
             return string.Join("", binaryResult.Reverse());
         }

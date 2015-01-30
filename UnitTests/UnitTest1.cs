@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.IO;
 using iwConsoleApp.DataStructures;
+using iwConsoleApp.Math;
 
 namespace UnitTests
 {
@@ -179,6 +180,19 @@ namespace UnitTests
             LinkedList list = new LinkedList();
             list.RemoveDuplicates(node);
             Assert.AreEqual(node.ToString(), "n1 -> n2 -> n3 -> n4 -> n5");
+        }
+
+
+        [TestMethod]
+        public void TestBinaryConverter()
+        {
+            Assert.AreEqual(BinaryConverter.Convert(1), "1");
+            Assert.AreEqual(BinaryConverter.Convert(3), "11");
+            Assert.AreEqual(BinaryConverter.Convert(10), "1010");
+            Assert.AreEqual(BinaryConverter.Convert(11), "1011");
+            Assert.AreEqual(BinaryConverter.Convert(15), "1111");
+            Assert.AreEqual(BinaryConverter.Convert(25), "11001");
+
         }
     }
 }

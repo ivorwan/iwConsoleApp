@@ -6,6 +6,7 @@ using System.Reflection;
 using System.IO;
 using iwConsoleApp.DataStructures;
 using iwConsoleApp.Math;
+using iwConsoleApp.Inheritance;
 
 namespace UnitTests
 {
@@ -194,5 +195,22 @@ namespace UnitTests
             Assert.AreEqual(BinaryConverter.Convert(25), "11001");
 
         }
+
+        [TestMethod]
+        public void TesTInheritance()
+        {
+            BaseClass bc = new BaseClass();
+            Assert.AreEqual(bc.Write(), "Base Write1");
+            Assert.AreEqual(bc.WriteVirtual(), "Base Write2");
+
+            DerivedClass dc = new DerivedClass();
+            Assert.AreEqual(dc.Write(), "Derived Write1");
+            Assert.AreEqual(dc.WriteVirtual(), "Derived Write2");
+
+            BaseClass dc2 = new DerivedClass();
+            Assert.AreEqual(dc2.Write(), "Base Write1");
+            Assert.AreEqual(dc2.WriteVirtual(), "Derived Write2");
+        }
+
     }
 }

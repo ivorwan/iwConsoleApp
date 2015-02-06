@@ -31,11 +31,11 @@ namespace iwConsoleApp.Inheritance
             return "Derived Write1";
         }
 
-        //public override string WriteVirtual()
-        //{
-        //    Console.WriteLine("Derived Write2");
-        //    return "Derived Write2";
-        //}
+        public override string WriteVirtual()
+        {
+            Console.WriteLine("Derived Write2");
+            return "Derived Write2";
+        }
 
         public string Method1(string p1, int p2)
         {
@@ -53,5 +53,44 @@ namespace iwConsoleApp.Inheritance
         }
        
 
+    }
+
+
+
+    public abstract class Person
+    {
+        protected string name;
+        public Person(string name)
+        {
+            this.name = name;
+        }
+        public abstract string GetName();
+
+        public virtual string GetNameVirtual()
+        {
+            return name; ;
+        }
+
+        public virtual string GetNameVirtualWithOverride()
+        {
+            return name; ;
+        }
+    }
+
+    public class Student : Person
+    {
+
+        public Student(string name) : base(name)
+        {
+        }
+        public override string GetName()
+        {
+            return name;
+        }
+
+        public override string GetNameVirtualWithOverride()
+        {
+            return "[Student] " + base.GetNameVirtualWithOverride();
+        }
     }
 }

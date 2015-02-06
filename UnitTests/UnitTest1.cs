@@ -197,7 +197,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void TesTInheritance()
+        public void TestInheritance()
         {
             BaseClass bc = new BaseClass();
             Assert.AreEqual(bc.Write(), "Base Write1");
@@ -210,6 +210,14 @@ namespace UnitTests
             BaseClass dc2 = new DerivedClass();
             Assert.AreEqual(dc2.Write(), "Base Write1");
             Assert.AreEqual(dc2.WriteVirtual(), "Derived Write2");
+            // ----------
+
+            Person student = new Student("John");
+            Assert.AreEqual(student.GetName(), "John");
+            Assert.AreEqual(student.GetNameVirtual(), "John");
+            Assert.AreEqual(student.GetNameVirtualWithOverride(), "[Student] John");
+
+
         }
 
     }

@@ -16,6 +16,22 @@ namespace iwConsoleApp
         static void Main(string[] args)
         {
 
+            string numString = "153";
+            int num = 0;
+            string tempString = numString;//String.Join("", numString.Reverse());
+            while (!String.IsNullOrEmpty(tempString))
+            {
+                num *= 10;
+                string ch = tempString.Substring(0, 1);
+                var intCh = Encoding.ASCII.GetBytes(ch)[0];
+                var zeroCh = Encoding.ASCII.GetBytes("0")[0];
+
+                num += (intCh - zeroCh);
+                tempString = tempString.Substring(1);
+
+            }
+
+
 
             string s = BinaryConverter.Convert(15);
             Console.ReadKey();

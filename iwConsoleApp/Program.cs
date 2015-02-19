@@ -38,13 +38,13 @@ namespace iwConsoleApp
 
 
             BaseClass bc = new DerivedClass();
-            bc.Write1();
-            bc.Write2();
+            bc.Write();
+            bc.WriteVirtual();
 
 
             DerivedClass dc = new DerivedClass();
-            dc.Write1();
-            dc.Write2();
+            dc.Write();
+            dc.WriteVirtual();
             Console.ReadKey();
 
 

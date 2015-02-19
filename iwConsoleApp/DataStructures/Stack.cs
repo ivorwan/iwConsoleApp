@@ -14,22 +14,43 @@ namespace iwConsoleApp.DataStructures
             Data = data;
         }
         public StackNode Next { get; set; }
+
+        public override string ToString()
+        {
+            var p = this;
+            string output = p.Data;
+            while (p.Next != null)
+            {
+                p = p.Next;
+                output += " -> " + p.Data;
+            }
+            return output;
+        }
+
+
     }
 
     public class Stack
     {
-        public StackNode head { get; set; }
+        public StackNode Head { get; set; }
 
         public void Push(StackNode node)
-        { }
+        {
+            node.Next = Head;
+            Head = node;
+        }
 
         public StackNode Pop()
         {
-            if (head == null)
+            if (Head == null)
                 return null;
 
-            head = head.Next;
-            return head;
+            StackNode node = Head;
+            node.Next = null;
+
+            Head = Head.Next;
+            return node;
         }
+
     }
 }

@@ -8,14 +8,16 @@ namespace iwConsoleApp.Inheritance
 {
     public class BaseClass
     {
-        public void Write1()
+        public string Write()
         {
             Console.WriteLine("Base Write1");
+            return "Base Write1";
         }
 
-        public virtual void Write2()
+        public virtual string WriteVirtual()
         {
             Console.WriteLine("Base Write2");
+            return "Base Write2";
         }
 
         
@@ -23,14 +25,16 @@ namespace iwConsoleApp.Inheritance
 
     public class DerivedClass : BaseClass
     {
-        public new void Write1()
+        public new string Write()
         {
             Console.WriteLine("Derived Write1");
+            return "Derived Write1";
         }
 
-        public override void Write2()
+        public override string WriteVirtual()
         {
             Console.WriteLine("Derived Write2");
+            return "Derived Write2";
         }
 
         public string Method1(string p1, int p2)
@@ -49,5 +53,44 @@ namespace iwConsoleApp.Inheritance
         }
        
 
+    }
+
+
+
+    public abstract class Person
+    {
+        protected string name;
+        public Person(string name)
+        {
+            this.name = name;
+        }
+        public abstract string GetName();
+
+        public virtual string GetNameVirtual()
+        {
+            return name; ;
+        }
+
+        public virtual string GetNameVirtualWithOverride()
+        {
+            return name; ;
+        }
+    }
+
+    public class Student : Person
+    {
+
+        public Student(string name) : base(name)
+        {
+        }
+        public override string GetName()
+        {
+            return name;
+        }
+
+        public override string GetNameVirtualWithOverride()
+        {
+            return "[Student] " + base.GetNameVirtualWithOverride();
+        }
     }
 }

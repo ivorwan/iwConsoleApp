@@ -220,5 +220,27 @@ namespace UnitTests
 
         }
 
+
+        [TestMethod]
+        public void TestStack()
+        {
+            Stack stack = new Stack();
+            stack.Push(new StackNode("1"));
+            Assert.AreEqual(stack.Head.ToString(), "1");
+
+            stack.Push(new StackNode("2"));
+            Assert.AreEqual(stack.Head.ToString(), "2 -> 1");
+
+            stack.Push(new StackNode("3"));
+            Assert.AreEqual(stack.Head.ToString(), "3 -> 2 -> 1");
+
+            StackNode popNode = stack.Pop();
+            Assert.AreEqual(stack.Head.ToString(), "2 -> 1");
+            Assert.AreEqual(popNode.ToString(), "3");
+
+
+        }
+
+
     }
 }

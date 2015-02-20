@@ -54,6 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataStructures\Tree.cs" />
     <Compile Include="Recursion\Recursion.cs" />
+    <Compile Include="Search\PriceIsRight.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

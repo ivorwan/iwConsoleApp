@@ -7,6 +7,7 @@ using System.IO;
 using iwConsoleApp.DataStructures;
 using iwConsoleApp.Math;
 using iwConsoleApp.Inheritance;
+using iwConsoleApp.Search;
 
 namespace UnitTests
 {
@@ -238,6 +239,48 @@ namespace UnitTests
             Assert.AreEqual(stack.Head.ToString(), "2 -> 1");
             Assert.AreEqual(popNode.ToString(), "3");
 
+
+        }
+
+        [TestMethod]
+        public void TestPriceIsRight()
+        {
+            int[] guesses = new int[10];
+            guesses[0] = 2;
+            guesses[1] = 1;
+            guesses[2] = 7;
+            guesses[3] = 9;
+            guesses[4] = 5;
+            guesses[5] = 6;
+            guesses[6] = 3;
+            guesses[7] = 10;
+            guesses[8] = 13;
+            guesses[9] = 12;
+
+            var pir = new PriceIsRight();
+            Assert.AreEqual(pir.Find(guesses, 11), 7);
+
+            Assert.AreEqual(pir.Find(guesses, 8), 2);
+            Assert.AreEqual(pir.Find(guesses, 12), 9);
+
+
+
+            int[] sortedGuesses = new int[10];
+            guesses[0] = 1;
+            guesses[1] = 2;
+            guesses[2] = 3;
+            guesses[3] = 5;
+            guesses[4] = 6;
+            guesses[5] = 7;
+            guesses[6] = 9;
+            guesses[7] = 10;
+            guesses[8] = 12;
+            guesses[9] = 13;
+
+            Assert.AreEqual(pir.Find2(guesses, 11), 7);
+
+            Assert.AreEqual(pir.Find2(guesses, 8), 5);
+            Assert.AreEqual(pir.Find2(guesses, 12), 8);
 
         }
 

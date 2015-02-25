@@ -284,6 +284,22 @@ namespace UnitTests
 
         }
 
+        [TestMethod]
+        public void TestPower()
+        {
+            Power pw = new Power();
+
+            Assert.AreEqual(pw.Calculate(5, 0), 1);
+            Assert.AreEqual(pw.Calculate(5, 1), 5);
+            Assert.AreEqual(pw.Calculate(5, 2), 25);
+            Assert.AreEqual(pw.Calculate(5, 3), 125);
+            Assert.AreEqual(pw.Calculate(5, 4), 625);
+            Assert.AreEqual(pw.Calculate(5, 10), 9765625);
+            
+
+
+        }
+
 
     }
 }

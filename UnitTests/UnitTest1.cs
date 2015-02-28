@@ -334,5 +334,11 @@ namespace UnitTests
 
         }
 
+        [TestMethod]
+        public void TestConstructorSequences()
+        {
+            DerivedClass dv = new DerivedClass();
+            Assert.AreEqual(dv.Message, ">>BaseClass>>DerivedClass");
+        }
     }
 }

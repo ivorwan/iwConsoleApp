@@ -8,6 +8,19 @@ namespace iwConsoleApp.Inheritance
 {
     public class BaseClass
     {
+        public string Message { get; set; }
+        public BaseClass()
+        {
+            Message += ">>BaseClass";
+            Console.WriteLine("BaseClass");
+        }
+
+        ~BaseClass()
+        {
+            System.Diagnostics.Trace.WriteLine("BaseClass's destructor is called.");
+
+        }
+
         public string Write()
         {
             Console.WriteLine("Base Write1");
@@ -25,6 +38,17 @@ namespace iwConsoleApp.Inheritance
 
     public class DerivedClass : BaseClass
     {
+        public DerivedClass()
+        {
+            Message += ">>DerivedClass";
+            Console.WriteLine("DerivedClass");
+        }
+        ~DerivedClass()
+        {
+            System.Diagnostics.Trace.WriteLine("DerivedClass's destructor is called.");
+      
+        }
+
         public new string Write()
         {
             Console.WriteLine("Derived Write1");

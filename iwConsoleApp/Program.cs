@@ -15,6 +15,12 @@ namespace iwConsoleApp
     {
         static void Main(string[] args)
         {
+
+            DerivedClass dv = new DerivedClass();
+            Console.WriteLine(dv.Message);
+            return;
+            Console.ReadLine();
+
             ArraysAndStrings arr = new ArraysAndStrings();
             arr.Question3();
 

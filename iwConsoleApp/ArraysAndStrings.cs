@@ -27,8 +27,8 @@ namespace iwConsoleApp
                     break;
                 }
             }
-
-
+            Console.WriteLine(dup);
+           
             // solution 2
             var result = str.GroupBy(c => c).Select(g => new {Key = g.Key, Count = g.Count()}).Where(k => k.Count > 1).ToList();
 
@@ -70,13 +70,56 @@ namespace iwConsoleApp
 
 
         /// <summary>
-        /// Design an algorithm and write code to remove the duplicate characters in a string without using any additional buffer. 
-        /// NOTE: One or two additional variables are fine. 
-        /// An extra copy of the array is not.
+        ///  Design an algorithm to print all permutations of a string   
+        ///  For simplicity, assume all characters are unique 
         /// </summary>
         public void Question3()
         {
+            string str = "abc";
+            var x = Perm(str);
 
+
+        }
+        /// <summary>
+        /// returns all permutations for str
+        /// eg:
+        /// P(a) -> a
+        /// P(ab) -> ab, ba
+        /// P(abc) -> a, b, c, ab, ba, ac, ca, bc, cb, abc, acb, bca, bac, cab, cba
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        private List<string> Perm(string str)
+        {
+
+
+            
+            List<string> ret = new List<string>();
+            if (str.Length == 1)
+            {
+                ret.Add(str);
+            }
+            else
+            {
+
+                //string ch = str.Substring(0, str.Length - 1);
+                //string c = str.Substring(str.Length - 1);
+                for (int i = 0; i <= str.Length - 1; i++)
+                {
+                    string ch = str.Substring(i, 1);
+                    string others = str.Substring(0, i) + str.Substring(i + 1);
+                    ret.Add(ch);
+                    foreach (string o in Perm(others))
+                    {
+                        ret.Add(ch + o);
+                    }
+                    
+                    
+                }
+
+            }
+            return ret;
+            
         }
     }
 }

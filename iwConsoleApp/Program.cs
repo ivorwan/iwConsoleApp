@@ -15,6 +15,9 @@ namespace iwConsoleApp
     {
         static void Main(string[] args)
         {
+            ArraysAndStrings arr = new ArraysAndStrings();
+            arr.Question3();
+
 
             string numString = "153";
             int num = 0;

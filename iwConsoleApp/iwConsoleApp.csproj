@@ -50,6 +50,7 @@
     <Compile Include="Inheritance\BaseClass.cs" />
     <Compile Include="LINQExamples.cs" />
     <Compile Include="Math\BinaryConverter.cs" />
+    <Compile Include="Math\Power.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataStructures\Tree.cs" />

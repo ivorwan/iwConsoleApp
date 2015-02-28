@@ -300,6 +300,39 @@ namespace UnitTests
 
         }
 
+        [TestMethod]
+        public void TestPemut()
+        {
+            ArraysAndStrings svc = new ArraysAndStrings();
+            List<string> r1 = svc.Perm("a");
+            Assert.IsTrue(r1.Contains("a"));
+
+            List<string> r2 = svc.Perm("ab");
+            Assert.IsTrue(r2.Contains("ab"));
+            Assert.IsTrue(r2.Contains("ba"));
+
+            List<string> r3 = svc.Perm("abc");
+            Assert.IsTrue(r3.Contains("a"));
+            Assert.IsTrue(r3.Contains("ab"));
+            Assert.IsTrue(r3.Contains("ac"));
+            Assert.IsTrue(r3.Contains("abc"));
+            Assert.IsTrue(r3.Contains("acb"));
+            Assert.IsTrue(r3.Contains("b"));
+            Assert.IsTrue(r3.Contains("ba"));
+            Assert.IsTrue(r3.Contains("bc"));
+            Assert.IsTrue(r3.Contains("bac"));
+            Assert.IsTrue(r3.Contains("bca"));
+            Assert.IsTrue(r3.Contains("c"));
+            Assert.IsTrue(r3.Contains("ca"));
+            Assert.IsTrue(r3.Contains("cb"));
+            Assert.IsTrue(r3.Contains("cab"));
+            Assert.IsTrue(r3.Contains("cba"));
+
+
+
+
+
+        }
 
     }
 }

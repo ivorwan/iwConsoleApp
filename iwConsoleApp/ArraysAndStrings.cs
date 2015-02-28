@@ -89,7 +89,7 @@ namespace iwConsoleApp
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        private List<string> Perm(string str)
+        public List<string> Perm(string str)
         {
 
 

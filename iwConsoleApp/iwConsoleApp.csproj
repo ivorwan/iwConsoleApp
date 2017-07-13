@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +46,10 @@
     <Compile Include="Abstract\Circle.cs" />
     <Compile Include="Abstract\Square.cs" />
     <Compile Include="ArraysAndStrings.cs" />
+    <Compile Include="CacheManager\CacheManager.cs" />
+    <Compile Include="CacheManager\IMyService.cs" />
+    <Compile Include="CacheManager\MyService.cs" />
+    <Compile Include="CacheManager\User.cs" />
     <Compile Include="DataStructures\LinkedList.cs" />
     <Compile Include="DataStructures\Stack.cs" />
     <Compile Include="Inheritance\BaseClass.cs" />
@@ -60,6 +65,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

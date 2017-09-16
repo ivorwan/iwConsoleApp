@@ -58,6 +58,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CacheManager\TestCacheManager.cs" />
+    <Compile Include="CodeGenerator\Class1.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

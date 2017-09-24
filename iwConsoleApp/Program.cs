@@ -15,6 +15,9 @@ namespace iwConsoleApp
     {
         static void Main(string[] args)
         {
+            int i = 12345;
+            string x = $"{i.ToString("D10")}";
+
 
             DerivedClass dv = new DerivedClass();
             Console.WriteLine(dv.Message);

@@ -14,6 +14,11 @@ namespace UnitTests.CodeGenerator
         public void Test()
         {
 
+            Func<int, string> oddOrEven = n => n % 2 == 0 ? "even" : "odd";
+            string x = oddOrEven(1);
+
+            Func<string, string> fcity = location => location.Trim().Split(',')[0].Trim();
+
             string fn = @"location.Trim().Split(',')[{0}].Trim()";
 
             Func<string, string> fnState = iwConsoleApp.CodeGenerator.CodeGenerator.ToFunc<string, string>(String.Format(fn, "1"), "location");

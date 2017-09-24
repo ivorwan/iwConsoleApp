@@ -46,9 +46,11 @@ namespace iwConsoleApp.DataStructures
                 return null;
 
             StackNode node = Head;
-            node.Next = null;
 
             Head = Head.Next;
+
+            
+            node.Next = null;
             return node;
         }
 

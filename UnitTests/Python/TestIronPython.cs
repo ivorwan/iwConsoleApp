@@ -15,7 +15,7 @@ namespace UnitTests.Python
         [TestMethod]
         public void Test_IronPython()
         {
-            
+
             string code = "def foo(a):\n    return a*2";
 
             string code2 = @"
@@ -28,16 +28,23 @@ def foo():
 
             string code4 = "import re\ndef foo(url):\n    return re.search( r'\\d+', url.split('/')[-1].split('-')[-1], re.M|re.I).group()";
 
+            string code5 = @"def foo(jobTitle, location, req):
+    return jobTitle + location + req";
+
             //            str = "Line1-abcdef \nLine2-abc \nLine4-abcd";
             //            print str.split()
             //print str.split(' ', 1)
 
             iwConsoleApp.PythonInterpreter py = new iwConsoleApp.PythonInterpreter();
 
+            var dynFn5 = py.CompileSourceAndGetFunction(code5, "foo");
+
+
             var fn = py.CompileSourceAndGetFunction<int, int>(code, "foo");
             var fn2 = py.CompileSourceAndGetFunction<string>(code2, "foo");
             var fn3 = py.CompileSourceAndGetFunction<string, string>(code3, "foo");
             var fn4 = py.CompileSourceAndGetFunction<string, string>(code4, "foo");
+            var fn5 = py.CompileSourceAndGetFunction<string, string, string, string>(code5, "foo");
 
             string url = "http://asdf.com/asdf/asdf/asdf/234-234555-12566545";
 
@@ -47,7 +54,7 @@ def foo():
 
             var result = fn(3);
             Assert.AreEqual(result, 6);
-            
+
             var x = fn(4);
             Assert.AreEqual(x, 8);
 

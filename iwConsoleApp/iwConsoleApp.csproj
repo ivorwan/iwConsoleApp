@@ -56,6 +56,9 @@
     <Reference Include="Microsoft.Scripting.Metadata, Version=1.1.2.22, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
       <HintPath>..\packages\DynamicLanguageRuntime.1.1.2\lib\Net45\Microsoft.Scripting.Metadata.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -74,6 +77,18 @@
     <Compile Include="CacheManager\IMyService.cs" />
     <Compile Include="CacheManager\MyService.cs" />
     <Compile Include="CacheManager\User.cs" />
+    <Compile Include="ChangeTracking\ContactData.cs" />
+    <Compile Include="ChangeTracking\EmailAddressData.cs" />
+    <Compile Include="ChangeTracking\EmailAddressType.cs" />
+    <Compile Include="ChangeTracking\Employee.cs" />
+    <Compile Include="ChangeTracking\EmployeeComponent.cs" />
+    <Compile Include="ChangeTracking\EmployeePropertyDictionary.cs" />
+    <Compile Include="ChangeTracking\Member.cs" />
+    <Compile Include="ChangeTracking\NameData.cs" />
+    <Compile Include="ChangeTracking\PersonData.cs" />
+    <Compile Include="ChangeTracking\PersonIdentificationData.cs" />
+    <Compile Include="ChangeTracking\ReadOnlyThreadSafeHashSet.cs" />
+    <Compile Include="ChangeTracking\ThreadSafeHashSet.cs" />
     <Compile Include="CodeGenerator\CodeGenerator.cs" />
     <Compile Include="DataStructures\LinkedList.cs" />
     <Compile Include="DataStructures\Stack.cs" />

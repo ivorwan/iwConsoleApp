@@ -82,6 +82,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CacheManager\TestCacheManager.cs" />
+    <Compile Include="ChangeTracking\TestChangeTracking.cs" />
     <Compile Include="CodeGenerator\Class1.cs" />
     <Compile Include="Python\TestIronPython.cs" />
     <Compile Include="RegexTest.cs" />
@@ -100,6 +101,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

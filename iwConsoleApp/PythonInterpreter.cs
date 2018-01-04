@@ -49,6 +49,19 @@ namespace iwConsoleApp
             return fn;
         }
 
+        public Func<TResult, T1, T2, T3> CompileSourceAndGetFunction<TResult, T1, T2, T3>(String code, string functionName)
+        {
+            //ScriptSource script = pyEngine.CreateScriptSourceFromString(code, SourceCodeKind.Statements);
+
+            //CompiledCode compiledCode = script.Compile();
+
+            //var result = compiledCode.Execute(pyScope);
+            CompileSource(code);
+
+            Func<TResult, T1, T2, T3> fn = pyScope.GetVariable<Func<TResult, T1, T2, T3>>(functionName);
+
+            return fn;
+        }
 
 
         public Func<TResult, T> CompileSourceAndGetFunction<TResult, T>(String code, string functionName)
@@ -63,6 +76,12 @@ namespace iwConsoleApp
             return fn;
         }
 
+        public dynamic CompileSourceAndGetFunction(String code, string functionName)
+        {
+            CompileSource(code);
+            return pyScope.GetVariable(functionName);
+
+        }
 
 
         //     public string CompileSourceAndExecuteMethod()
